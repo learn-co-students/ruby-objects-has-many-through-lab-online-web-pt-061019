@@ -17,7 +17,7 @@ class Patient
 
   def appointments
 # Song.all.select {|song| song.genre == self}
-    Appointments.all.select {|appt| appt.patient == self}
+    Appointment.all.select {|appt| appt.patient == self}
   end
 
   def doctors
