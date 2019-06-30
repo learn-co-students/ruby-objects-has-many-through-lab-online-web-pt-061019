@@ -17,13 +17,10 @@ class Doctor
   end
 
   def appointments
-# Song.all.select {|song| song.artist == self}
     Appointment.all.select{ |appt| appt.doctor == self}
-    # binding.pry
   end
 
   def patients
-  # songs.map {|song| song.genre }
   appointments.map {|appt| appt.patient}
   end
 end
