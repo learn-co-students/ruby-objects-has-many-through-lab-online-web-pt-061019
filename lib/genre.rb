@@ -16,13 +16,13 @@ class Genre
   end
   
   def songs
-    @songs.find_all do |song| 
-      song.genre
+    Song.all.select do |song| 
+      song.genre == self
     end
   end
   
   def artists
-    @songs.collect do |genre|
+    songs.collect do |song|
       song.artist
     end
   end
