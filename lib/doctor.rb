@@ -14,17 +14,13 @@ class Doctor
     @@all
   end
   
-  def new_appointment(patient_name, date)
-    appointment = Patient.new(patient_name, self, date)
+  def new_appointment(patient, date)
+    appointment = Appointment.new(patient, self, date)
     @appointments << appointment
     appointment
   end
-  
-  def appointments
-    @appointments
-  end
-  
-  def patients
-      self.appointments.collect {|appointment| appointment.patient}
+   
+   def patients
+     self.appointments.collect {|appointment| appointment.patient}
   end
 end
